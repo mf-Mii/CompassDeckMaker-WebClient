@@ -18,9 +18,32 @@
 
 <style scoped lang="scss">
 
+#deckBox-TotalStatus > {
+  h5 {
+    color: #555;
+    border-bottom: 2px solid;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 10px;
+
+    }
+  }
+
+#deckBox-TotalStatus-HeroCalc {
+  border: 2px solid #888;
+  display: inline-block;
+  background: #fff;
+  float: right;
+  padding: 0 5px;
+}
+
+
 </style>
 <script>
-import RightDeck_Status from "@/components/deckmaker/rightmenu/deck/RightDeck_Status.vue";
+import RightDeck_Status from "@/components/deckmaker/right_frame/deck/RightDeck_StatusBar.vue";
 
 export default {
   components: {
