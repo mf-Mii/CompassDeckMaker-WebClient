@@ -1,0 +1,15 @@
+.br {
+  display: inline-block;
+  font-size: 0;
+}
+:root {
+  --cps-theme:#FC8811;
+  --cpsdm-cardDetail-stat-size:14px;
+}
+.hide {
+  display: none !important;
+}
+
+#app {
+  height: 100vh;
+}
