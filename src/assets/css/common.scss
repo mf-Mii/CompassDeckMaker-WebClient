@@ -13,3 +13,19 @@
 #app {
   height: 100vh;
 }
+
+.x-line {
+  border-bottom: 1px solid #444;
+}
+
+.iconBtn {
+  cursor: pointer;
+}
+.tooltip > .tooltip-inner {
+  opacity: .75;
+}
+
+::selection {
+    background: var(--cps-theme);
+    color: white;
+}

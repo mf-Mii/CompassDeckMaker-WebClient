@@ -1,7 +1,3 @@
-<script setup>
-import '@/assets/css/deck-maker.scss';
-</script>
-
 <template>
 
   <div id="leftmenuHeader">
@@ -20,7 +16,40 @@ import '@/assets/css/deck-maker.scss';
 </template>
 
 <style scoped lang="scss">
+#leftmenuHeader {
+  padding-top: 20px;
+  padding-right: 5%;
+  padding-left: 5%;
+  margin: 0 auto 10px;
+  .editBtn-container {
+    display: inline;
+  }
+  .editing {
+    .deckList-item {
+      .deckList-nameInput {
+        display: inline !important;
+        width: calc(100% - 68px) !important;
+      }
+      .deckList-nameEnter {
+        display: initial !important;
+      }
+      .deckList-buttons, .deckList-name {
+        display: none !important;
+      }
+    }
+  }
+}
 
+#addDeck {
+  background: var(--cps-theme);
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  padding: 5px 0;
+  span {
+    padding: 0 10px;
+  }
+}
 </style>
 <script>
 import LeftDeckList from "@/components/deckmaker/leftmenu/LeftDeckList.vue";

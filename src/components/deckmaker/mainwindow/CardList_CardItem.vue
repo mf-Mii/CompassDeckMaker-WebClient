@@ -6,7 +6,7 @@ defineProps({
 })
 </script>
 <template>
-  <li class="list-group-item cpsdm-cardList-container-list-item" :style="'background-image: url(http://cpsdm-assets.local.mfmii.work/img/card/normal/' + this.card_data.ID +'.webp);'" v-if="this.card_data != undefined">
+  <li class="list-group-item cpsdm-cardList-container-list-item" :style="'background-image: url(http://cpsdm-assets.local.mfmii.work/img/card/normal/' + this.card_data.ID +'.webp);'" v-if="this.card_data !== undefined">
     <div class="cpsdm-cardList-cardDetail" data-cpsdm-cardid="1">
       <span class="cpsdm-cardList-cardDetail-name">{{this.card_data.Name}}</span>
       <div class="cpsdm-cardList-cardDetail-status">
@@ -33,6 +33,132 @@ defineProps({
 
 <style scoped lang="scss">
 
+.cpsdm-cardList-container-list-item {
+  width: 120px;
+  height: 165px;
+  margin: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  .cpsdm-cardList-cardDetail {
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background: #0005;
+    padding: 5px 0;
+
+    > * {
+      display: block;
+      color: #fff;
+    }
+
+    .cpsdm-cardList-cardDetail-name {
+      line-height: 16px;
+      display: block;
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    .cpsdm-cardList-cardDetail-status {
+      width: 60%;
+      display: block;
+      text-align: center;
+      font-size: var(--cpsdm-cardDetail-stat-size);
+      margin: 10px 20px;
+      > span {
+        display: block;
+        width: 100%;
+        line-height: calc(var(--cpsdm-cardDetail-stat-size) - 2px);
+        &::before {
+          content: " ";
+          display: inline-block;
+          width: var(--cpsdm-cardDetail-stat-size);
+          height: var(--cpsdm-cardDetail-stat-size);
+          background-size: contain;
+          background-position: center;
+          margin-right: 16px;
+        }
+        &.cpsdm-cardList-cardDetail-status-atk::before {
+          background-image: url(http://cpsdm-assets.local.mfmii.work/img/icons/stat_attack_w.png);
+        }
+
+        &.cpsdm-cardList-cardDetail-status-def::before {
+          background-image: url(http://cpsdm-assets.local.mfmii.work/img/icons/stat_defence_w.png);
+        }
+
+        &.cpsdm-cardList-cardDetail-status-phy::before {
+          background-image: url(http://cpsdm-assets.local.mfmii.work/img/icons/stat_physical_w.png);
+        }
+      }
+    }
+    .cpsdm-cardList-cardDetail-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 14px;
+      text-align: center;
+      justify-content: center;
+
+      > span.pad {
+        padding: 0 5px;
+      }
+    }
+    .cpsdm-cardList-cardDetail-buttonBox {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 0 0;
+      .cpsdm-cardList-cardDetail-button {
+        background: none;
+        border: none;
+        margin: 0 5px;
+        border-radius: 0;
+        padding: 0;
+        transition: 0.2s;
+        width: 36px;
+
+        > {
+          svg {
+            position: relative;
+            width: 36px;
+            height: 36px;
+          }
+
+          span {
+            display: block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            opacity: 0;
+            transition: 0.2s;
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            filter: drop-shadow(0 0 3px #000);
+          }
+        }
+
+        &:hover {
+          background: none;
+
+          > {
+            svg {
+              filter: blur(2px);
+            }
+
+            span {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:active {
+          background: none !important;
+        }
+      }
+    }
+  }
+}
 </style>
 <script>
 import IconInfo from "@/components/icons/IconInfo.vue";
