@@ -1,11 +1,8 @@
 <script setup>
-import '@/assets/css/deck-maker.scss';
-import LeftDeckList from "@/components/deckmaker/leftmenu/LeftDeckList.vue";
-import LeftDeckMenu from "@/components/deckmaker/leftmenu/LeftDeckMenu.vue";
 import CardList_RankContainer from "@/components/deckmaker/mainwindow/CardList_RankContainer.vue";
 import CardProperties from "@/script/cpsdm/model/CardProperties";
 import MainWindow_Header from "@/components/deckmaker/mainwindow/MainWindow_Header.vue";
-import RightDeck_TotalStatus from "@/components/deckmaker/rightmenu/deck/RightDeck_TotalStatus.vue";
+import RightFrame from "@/components/deckmaker/right_frame/RightFrame.vue";
 </script>
 <template>
   <main class="d-flex d-xxl-flex justify-content-start justify-content-xxl-start">
@@ -14,8 +11,7 @@ import RightDeck_TotalStatus from "@/components/deckmaker/rightmenu/deck/RightDe
     </div>
     <div id="mainWindow">
       <MainWindow_Header />
-      <!-- Start: Line -->
-      <div class="x-line"></div><!-- End: Line -->
+      <div class="x-line"></div>
       <div id="cardList_Main">
         <CardList_RankContainer :card-rank="CardProperties.Rank.F" :card-list="this.$data.card_list.filtered" />
         <CardList_RankContainer :card-rank="CardProperties.Rank.E" :card-list="this.$data.card_list.filtered" />
@@ -29,69 +25,37 @@ import RightDeck_TotalStatus from "@/components/deckmaker/rightmenu/deck/RightDe
         <CardList_RankContainer :card-rank="CardProperties.Rank.SUGGEST" :card-list="this.$data.card_list.filtered" />
       </div>
     </div>
-    <div id="rightwindow">
-      <div id="deckBox">
-        <div id="deckBox-Title">
-          <h2>DECK</h2><button class="btn btn-danger" type="button">フリバモード</button>
-        </div>
-        <div id="deckBox-Cards">
-          <ul>
-            <li class="deckBox-card">
-              <img src="http://cpsdm-assets.local.mfmii.work/img/card/normal/1.webp" width="100%">
-              <div class="deckBox-card-detail">
-                <!-- Start: LevelInput -->
-                <div class="deckBox-card-detail-level"><span>Lv.&nbsp;</span><input type="number" class="deckBox-card-detail-level-input" min="1" max="60"></div><!-- End: LevelInput -->
-                <div class="deckBox-card-detail-statusBox">
-                  <span class="deckBox-card-detail-statusBox-atk">999</span>
-                  <span class="deckBox-card-detail-statusBox-def">999</span>
-                  <span class="deckBox-card-detail-statusBox-phy">9999</span>
-                </div>
-                <div class="deckBox-card-detail-info"><span>発:&nbsp;無</span><span>CT:999</span></div>
-              </div>
-            </li>
-            <li class="deckBox-card">
-              <img src="http://cpsdm-assets.local.mfmii.work/img/card/normal/1.webp" width="100%">
-              <div class="deckBox-card-detail">
-                <!-- Start: LevelInput -->
-                <div class="deckBox-card-detail-level"><span>Lv.&nbsp;</span><input type="number" class="deckBox-card-detail-level-input" min="1" max="60"></div><!-- End: LevelInput -->
-                <div class="deckBox-card-detail-statusBox"><span class="deckBox-card-detail-statusBox-atk">999</span><span class="deckBox-card-detail-statusBox-def">999</span><span class="deckBox-card-detail-statusBox-phy">9999</span></div>
-                <div class="deckBox-card-detail-info"><span>発: 無</span><span>CT:999</span></div>
-              </div>
-            </li>
-            <li class="deckBox-card">
-              <img src="http://cpsdm-assets.local.mfmii.work/img/card/normal/1.webp" width="100%">
-              <div class="deckBox-card-detail">
-                <!-- Start: LevelInput -->
-                <div class="deckBox-card-detail-level"><span>Lv.&nbsp;</span><input type="number" class="deckBox-card-detail-level-input" min="1" max="60"></div><!-- End: LevelInput -->
-                <div class="deckBox-card-detail-statusBox"><span class="deckBox-card-detail-statusBox-atk">999</span><span class="deckBox-card-detail-statusBox-def">999</span><span class="deckBox-card-detail-statusBox-phy">9999</span></div>
-                <div class="deckBox-card-detail-info"><span>発: 無</span><span>CT:999</span></div>
-              </div>
-            </li>
-            <li class="deckBox-card">
-              <img src="http://cpsdm-assets.local.mfmii.work/img/card/normal/1.webp" width="100%">
-              <div class="deckBox-card-detail">
-                <!-- Start: LevelInput -->
-                <div class="deckBox-card-detail-level"><span>Lv.&nbsp;</span><input type="number" class="deckBox-card-detail-level-input" min="1" max="60"></div><!-- End: LevelInput -->
-                <div class="deckBox-card-detail-statusBox"><span class="deckBox-card-detail-statusBox-atk">999</span><span class="deckBox-card-detail-statusBox-def">999</span><span class="deckBox-card-detail-statusBox-phy">9999</span></div>
-                <div class="deckBox-card-detail-info"><span>発: 無</span><span>CT:999</span></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <RightDeck_TotalStatus />
-      </div>
-    </div>
+    <RightFrame />
   </main>
 </template>
 
 <style scoped lang="scss">
+main {
+  height: calc(100% - 100px);
+  z-index: 100;
+
+  #leftmenu {
+    height: 100%;
+    width: 20%;
+    max-width: 300px;
+    border-right: 1px solid #444;
+  }
+
+  #mainWindow {
+    height: 100%;
+    flex: 1;
+
+    #cardList_Main {
+      height: calc(100vh - 167px);
+      overflow-y: scroll;
+    }
+  }
+}
 </style>
 <script>
 import LeftDeckMenu from "@/components/deckmaker/leftmenu/LeftDeckMenu.vue";
 import LeftDeckList from "@/components/deckmaker/leftmenu/LeftDeckList.vue";
-import {User} from "@/script/cpsdm/model/User";
 import CardManager from "@/script/cpsdm/controller/CardManager";
-import {CardType} from "@/script/cpsdm/model/CardTypes";
 
 export default {
   components: {

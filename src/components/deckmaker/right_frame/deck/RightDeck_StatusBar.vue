@@ -20,7 +20,108 @@
 </template>
 
 <style scoped lang="scss">
+.deckBox-TotalStatus-status {
+  color: #666;
 
+  > span {
+    font-weight: bold;
+    line-height: 20px;
+    vertical-align: top;
+
+    &::before {
+      content: " ";
+      display: inline-block;
+      width: var(--cpsdm-cardDetail-stat-size);
+      height: var(--cpsdm-cardDetail-stat-size);
+      background-size: contain;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  &[data-cpsdm-totalstatus="atk"] > span::before {
+    background-image: url(http://cpsdm-assets.local.mfmii.work/img/icons/stat_attack.png);
+  }
+
+  &[data-cpsdm-totalstatus="def"] > span::before {
+    background-image: url(http://cpsdm-assets.local.mfmii.work/img/icons/stat_defence.png);
+  }
+
+  &[data-cpsdm-totalstatus="phy"] > span::before {
+    background-image: url(http://cpsdm-assets.local.mfmii.work/img/icons/stat_physical.png);
+  }
+
+  .deckBox-TotalStatus-status-barBox {
+    display: inline-block;
+    border: 2px solid #999;
+    width: calc(100% - 80px);
+    height: 20px;
+    margin-left: 20px;
+    background: #444;
+    font-size: 0;
+    position: relative;
+
+
+    .deckBox-TotalStatus-status-barBox-text {
+      position: absolute;
+      transform: translate(120px, -4px);
+      display: inline-block;
+      font-size: 14px;
+      color: #fff;
+      z-index: 110;
+      font-weight: bold;
+
+      .deckBox-TotalStatus-status-barBox-text-normal {
+        font-weight: normal;
+      }
+
+      .deckBox-TotalStatus-status-barBox-text-plus {
+        color: #6371cc;
+      }
+
+      .deckBox-TotalStatus-status-barBox-text-minus {
+        color: #f00;
+      }
+
+      .deckBox-TotalStatus-status-barBox-text-total {
+        text-decoration: underline;
+      }
+    }
+
+    .deckBox-TotalStatus-status-barBox-val {
+      display: inline-block;
+      height: 100%;
+      position: relative;
+      width: 0;
+      //width: 50%;
+      background-color: #ce5;
+      z-index: 100;
+    }
+
+    .deckBox-TotalStatus-status-barBox-val-plus {
+      display: inline-block;
+      height: 100%;
+      position: relative;
+      width: 0;
+      //width: 17%;
+      background-color: #0fbb0f;
+      z-index: 100;
+    }
+
+    .deckBox-TotalStatus-status-barBox-val-minus {
+      display: inline-block;
+      height: 100%;
+      position: relative;
+      width: 0;
+      //width: 7%;
+      background-color: #f80;
+      //left: -7%;
+      z-index: 100;
+    }
+  }
+}
 </style>
 <script>
 export default {

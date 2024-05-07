@@ -17,5 +17,37 @@
 </template>
 
 <style scoped lang="scss">
+#cardList_Header {
+  margin: 10px 5px;
+  h2 {
+    display: inline-block;
+    margin-bottom: 0;
+    width: 150px;
+  }
 
+  #cardList_Header_SearchForm {
+
+    #cardList_Header_SF_filterBtn {
+      border-top: 0;
+      border-bottom: 0;
+      font-size: 14px;
+      margin: auto 10px;
+    }
+
+    #cardList_Header_SF_searchBox {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #888;
+      transition: .3s;
+
+      &:focus {
+        border-bottom: 1px solid #333;
+      }
+    }
+
+    #cardList_Header_SF_detailSwitch {
+      display: inline-block;
+    }
+  }
+}
 </style>

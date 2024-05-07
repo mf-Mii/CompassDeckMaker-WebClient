@@ -22,6 +22,43 @@
   </div><!-- End: RankContainer -->
 </template>
 <style scoped lang="scss">
+.cpsdm-cardList-rankContainer {
+  width: calc(100% - 20px);
+  margin: 10px;
+
+  .cpsdm-cardList-rankContainer-head {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #888;
+
+    .cpsdm-cardList-rankContainer-toggleBtn {
+      background: none !important;
+      border: none !important;
+      color: #000 !important;
+      outline: none;
+      box-shadow: none !important;
+    }
+  }
+  .cpsdm-cardList-container {
+    width: 100%;
+    margin: 10px;
+
+    .cpsdm-cardList-container-list {
+      width: calc(100% - 20px);
+      border: none;
+      list-style: none;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      justify-content: flex-start;
+    }
+  }
+}
 </style>
 <script lang="ts">
 import CardList_CardItem from "@/components/deckmaker/mainwindow/CardList_CardItem.vue";
