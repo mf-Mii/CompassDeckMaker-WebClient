@@ -30,5 +30,5 @@ coverage
 *.tsbuildinfo
 
 # GAME DATA
-resources/img/card/*
-resources/img/hero/*
+/resources/img/card/
+/resources/img/hero/

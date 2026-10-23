@@ -1,0 +1,67 @@
+{
+  "_version": 1,
+  "app": {
+    "logo": "/img/logo.svg",
+    "favicon": "/img/favicon.ico"
+  },
+  "views": {
+    "deckmaker": {
+      "status": {
+        "attack": "/img/icons/stat_atk.png",
+        "attack_white": "/img/icons/stat_atk_w.png",
+        "defense": "/img/icons/stat_def.png",
+        "defense_white": "/img/icons/stat_def_w.png",
+        "physical": "/img/icons/stat_phy.png",
+        "physical_white": "/img/icons/stat_phy_w.png",
+        "hero_speed": "/img/icons/herostat_spd.png",
+        "hero_speed_white": "/img/icons/herostat_spd_w.png",
+        "hero_attack_speed": "/img/icons/herostat_atkSpd.png",
+        "hero_attack_speed_white": "/img/icons/herostat_atkSpd_w.png",
+        "hero_attack_length": "/img/icons/herostat_len.png",
+        "hero_attack_length_white": "/img/icons/herostat_len_w.png"
+      },
+      "hero": {
+        "role": {
+          "attacker": "/img/icons/role_atk.png",
+          "gunner": "/img/icons/role_gun.png",
+          "sprinter": "/img/icons/role_spr.png",
+          "tank": "/img/icons/role_tank.png"
+        },
+        "medal": {
+          "base": {
+            "none": "/img/icons/medal_base_0.png",
+            "white": "/img/icons/medal_base_w.png",
+            "purple": "/img/icons/medal_base_p.png",
+            "yellow": "/img/icons/medal_base_y.png"
+          },
+          "effect": {
+            "attack": "/img/icons/medal_effect_atk.png",
+            "defense": "/img/icons/medal_effect_def.png",
+            "physical": "/img/icons/medal_effect_phy.png",
+            "speed": "/img/icons/medal_effect_spd.png",
+            "card_cool": "/img/icons/medal_effect_cardcool.png",
+            "skill_gauge": "/img/icons/medal_effect_skillgauge.png",
+            "key_speed": "/img/icons/medal_effect_keyspd.png",
+            "attr_fire": "/img/icons/medal_effect_fire.png",
+            "attr_water": "/img/icons/medal_effect_water.png",
+            "attr_wood": "/img/icons/medal_effect_wood.png",
+            "stan": "/img/icons/medal_effect_stan.png",
+            "poison": "/img/icons/medal_effect_poison.png",
+            "silent": "/img/icons/medal_effect_silent.png"
+          }
+        }
+      },
+      "card": {
+        "type": {
+
+        },
+        "nockback": {
+          "c": "/img/icons/nb_rep_c.png",
+          "b": "/img/icons/nb_rep_b.png",
+          "a": "/img/icons/nb_rep_a.png",
+          "s": "/img/icons/nb_rep_s.png"
+        }
+      }
+    }
+  }
+}
